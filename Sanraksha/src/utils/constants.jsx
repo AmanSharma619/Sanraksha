@@ -1,0 +1,1 @@
+export const MAIN_BG = "https://cdn.pixabay.com/photo/2016/01/10/21/06/eye-1132531_640.jpg";
