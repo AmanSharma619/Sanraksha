@@ -1,0 +1,69 @@
+{/*this is for the animations in about section.*/}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.animate-fadeIn {
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.8s forwards;
+}
+
+.animate-slideUp {
+    opacity: 0;
+    animation: slideUp 0.8s ease-out 0.4s forwards;
+}
+
+.animate-slideInRight {
+    opacity: 0;
+    animation: slideInRight 0.6s ease-out forwards;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.bg-radial-gradient {
+    background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.1) 0%, transparent 80%);
+}
+
+.bg-radial-gradient-light {
+    background: radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+}
+
+.bg-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+}
+
+.scroll-animate {
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+}
