@@ -50,7 +50,7 @@ const About = () => {
             Drive your safety to a new age
           </h2>
           <p className="text-base text-clr1/90 mb-8 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus imperdiet sed id elementum. Quam aliquam sit vulputate. Faucibus nec gravida ipsum vitae morbi lacus volutpat neque.
+            Helping locate and navigate to the nearest safe zones
           </p>
           <button className="bg-white text-clr2 border-none rounded-full px-8 py-3 font-semibold cursor-pointer transition-all duration-300 hover:translate-y-1 hover:shadow-lg animate-pulse">
             <Link to='/dashboard'>Get Started</Link>
