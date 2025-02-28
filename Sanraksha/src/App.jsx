@@ -6,6 +6,7 @@ import Heatmaps from './components/Heatmaps';
 import Components from './components/';
 import Safezones from './components/Safezones';
 import RecentCrimes from './components/RecentCrimes';
+import Feedback from './components/Feedback';
 function App() {
   return (
     <BrowserRouter basename="/">
@@ -17,6 +18,7 @@ function App() {
           <Route path="/heatmaps" element={<Heatmaps />} />
           <Route path="/safezones" element={<Safezones />} />
           <Route path="/recent_crimes" element={< RecentCrimes/>} />
+          <Route path="/feedback" element={< Feedback/>} />
           
           
         </Route>
