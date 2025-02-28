@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState,useEffect } from 'react';
 const RecentCrimes = () => {
     const [currposition,set_position]=useState(null)
