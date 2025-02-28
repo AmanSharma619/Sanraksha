@@ -3,6 +3,12 @@ import { useState,useEffect } from 'react';
 const RecentCrimes = () => {
     const [currposition,set_position]=useState(null)
     const [district,set_district]=useState(null)
+    const [recentnews,set_news]=useState([
+      {
+        date: "null",
+        time: null
+      }
+    ])
     let map,curr_position;
     useEffect(()=>{
         let a =confirm("Sanraksha wants to know your location")
@@ -16,6 +22,7 @@ const RecentCrimes = () => {
            
         }
     },[currposition])
+   
     function getlocation() {
         console.log("get location");
         const geocoder = new google.maps.Geocoder();
@@ -64,7 +71,9 @@ const RecentCrimes = () => {
           },
         })
         let news=await response2.json()
+        set_news(news)
         console.log(news);
+        
         
         
     
@@ -95,6 +104,31 @@ const RecentCrimes = () => {
   return (
     <>
     <div id="map" className='hidden'></div>
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+
+
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-clr5 via-clr4 to-clr5 opacity-100 flex flex-col items-center justify-center text-clr1 font-bold ">
+        <div className="mx-auto h-6 flex text-clr1 text-2xl font-bold mb-5 items-center mt-5 p-4 items-center">
+          Fetching recent crime news in <span className='text-clr2 text-3xl font-bold underline ml-2'> { district || "..."}</span>
+        </div>
+       
+      <div className='news w-full h-14 bg-black text-white'>{recentnews[0].date || "wait"}</div>
+      {/* <div className='news w-full h-14 bg-black text-white'>{recentnews[0].time || "wait"}</div>
+      <div className='news w-full h-14 bg-black text-white'>{recentnews[0].title || "wait"}</div>
+      <div className='news w-full h-14 bg-black text-white'>{recentnews[0].link || "wait"}</div> */}
+
+
+
+
+
+
+      </div>
+
+
+
+
+    </div>
+
     </>
   )
 }
