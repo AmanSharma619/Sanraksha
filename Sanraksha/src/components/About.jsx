@@ -46,15 +46,17 @@ const About = () => {
       <div className="flex-1 flex flex-col bg-gradient-to-b from-clr5 via-clr2 to-clr2 p-8 lg:p-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-radial-gradient pointer-events-none"></div>
         <div className="max-w-[90%] opacity-0 animate-slideUp">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-clr1 leading-tight">
+          <h2 className="text-6xl lg:text-5xl text-center font-bold mb-6 text-clr1 leading-tight">
             Drive your safety to a new age
           </h2>
-          <p className="text-base text-clr1/90 mb-8 leading-relaxed">
-            Helping locate and navigate to the nearest safe zones
+          <p className="text-xl font-semibold text-center text-clr1/80 mb-8 leading-relaxed">
+            Helping locate and navigate to the nearest safe zones, & providing real-time crime updates of your area
           </p>
-          <button className="bg-white text-clr2 border-none rounded-full px-8 py-3 font-semibold cursor-pointer transition-all duration-300 hover:translate-y-1 hover:shadow-lg animate-pulse">
+          <div className='flex items-center justify-center'>
+          <button className="bg-white flex items-center justify-center text-clr2 border-none rounded-full px-8 py-3 font-semibold cursor-pointer transition-all duration-300 hover:translate-y-1 hover:shadow-lg animate-pulse">
             <Link to='/dashboard'>Get Started</Link>
           </button>
+          </div>
         </div>
 
         {/* <div className="w-98 aspect-square overflow-hidden opacity-0 animate-fadeIn">
@@ -80,7 +82,7 @@ const About = () => {
             <div 
               key={feature.id} 
               className={`bg-white/10 rounded-xl p-6 relative backdrop-blur-sm shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl opacity-0 ${isVisible ? 'animate-slideInRight' : ''}`}
-              style={{ animationDelay: `${0.2 + index * 0.2}s` }}
+              style={{ animationDelay: `${0.4 + index * 0.2}s` }}
             >
               <div className="absolute top-4 right-4 text-2xl font-bold text-white/30">
                 {feature.id}

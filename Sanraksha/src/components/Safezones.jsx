@@ -143,7 +143,7 @@ const Safezones = () => {
             const request = {
                 textQuery: "hospital",
                 fields: ["displayName", "location", "businessStatus", "nationalPhoneNumber"],
-                // includedType: "police station",
+                //includedType: "police station",
                 locationBias: loc,
                 isOpenNow: true,
                 language: "en-US",
@@ -275,9 +275,9 @@ const Safezones = () => {
             <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
 
 
-                <div className="absolute inset-0 z-10 bg-gradient-to-b from-clr5 via-clr4 to-clr5 opacity-100 flex flex-col items-center justify-center text-clr1 font-bold ">
-
-                    <div id="map" className="mx-auto rounded-xl h-2/3 w-2/3" />
+                <div className="absolute space-y-4 text-left inset-0 z-10 bg-gradient-to-b from-clr5 via-clr4 to-clr5 opacity-100 flex flex-col items-center justify-center text-clr1 font-bold ">
+                {/* <div className="py-4"> */}
+                    <div id="map" className="mx-auto rounded-xl h-2/3 w-2/3 mb-4" />
                     *Click on the markers to know info
                     <div className="mx-auto h-6 flex text-clr1 text-xl font-bold mb-3 items-center">
 
@@ -296,17 +296,9 @@ const Safezones = () => {
                         -Police Stations
 
                     </div>
-
-
-
+                    {/* </div> */}
                 </div>
-
-
-
-
             </div>
-
-
         </>
     )
 }
