@@ -4,8 +4,12 @@ const Header = () => {
   return (
     <div className="bg-clr5">
       <div className="flex items-center justify-between p-6 max-w-7xl mx-auto z-[1] relative">
-        <div className="flex-1 text-left">
-          <h1 className="font-bold text-4xl bg-gradient-to-r from-clr1 to-clr2 bg-clip-text text-transparent hover:bg-gradient-to-l from-clr1 to-clr3 transition duration-500 ease-in-out">
+        <div className="flex text-left">
+          <img 
+          src='/logo.png'
+          className='w-32 px-2 py-0'
+          />
+          <h1 className="font-bold mt-8 text-4xl bg-gradient-to-r from-clr1 to-clr2 bg-clip-text text-transparent hover:bg-gradient-to-l from-clr1 to-clr3 transition duration-500 ease-in-out">
             <Link to="/">Sanraksha</Link>
           </h1>
         </div>

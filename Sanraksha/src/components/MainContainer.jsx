@@ -31,7 +31,7 @@ const MainContainer = () => {
           <img 
             src={MAIN_BG}
             alt="background"
-            className="w-full h-full object-cover object-center mt-10 transition-transform duration-700"
+            className="w-full h-full object-cover object-center mt-[-36px] transition-transform duration-700"
             style={{ 
               transform: `scale(${1 + scrollY * 0.0005}) translateY(${scrollY * 0.2}px)`,
               opacity: `${Math.max(0.3, 0.6 - scrollY * 0.001)}` 
