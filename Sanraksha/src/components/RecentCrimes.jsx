@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState,useEffect } from 'react';
 const RecentCrimes = () => {
     const [currposition,set_position]=useState(null)
@@ -97,19 +96,66 @@ const RecentCrimes = () => {
           }, 1000);
         })
       }
+
+      // const dummyNews = [
+      //   { title: "Armed Robbery at Downtown Bank", date: "Feb 28, 2025", link: "https://example.com/news/robbery" },
+      //   { title: "Police Arrest Suspect in Local Burglary Case", date: "Feb 27, 2025", link: "https://example.com/news/arrest" },
+      //   { title: "Car Theft Ring Busted in Northern District", date: "Feb 26, 2025", link: "https://example.com/news/theft" },
+      //   { title: "Vandalism Reported at City Park", date: "Feb 25, 2025", link: "https://example.com/news/vandalism" },
+      //   { title: "Drug Bust Leads to Multiple Arrests", date: "Feb 24, 2025", link: "https://example.com/news/drugs" },
+      //   { title: "Assault Case Under Investigation", date: "Feb 23, 2025", link: "https://example.com/news/assault" },
+      //   { title: "Counterfeit Operation Discovered", date: "Feb 22, 2025", link: "https://example.com/news/counterfeit" },
+      //   { title: "Identity Theft Scheme Targets Locals", date: "Feb 21, 2025", link: "https://example.com/news/identity" },
+      //   { title: "Shoplifting Incident at Local Mall", date: "Feb 20, 2025", link: "https://example.com/news/shoplifting" },
+      //   { title: "Traffic Stop Leads to Weapons Charge", date: "Feb 19, 2025", link: "https://example.com/news/weapons" },
+      //   { title: "Cyber Attack on Local Business", date: "Feb 18, 2025", link: "https://example.com/news/cyber" },
+      //   { title: "Suspicious Activity Reported Near School", date: "Feb 17, 2025", link: "https://example.com/news/suspicious" }
+      // ];
+
+      // const district_dummy= "a rock";
       
   return (
     <>
-    <div id="map" className='hidden'></div>
-    <div className="min-h-screen flex flex-col  relative overflow-hidden">
-
-
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-clr5 via-clr4 to-clr5 opacity-100 flex flex-col   text-clr1 font-bold ">
-        <div className="mx-auto h-6 flex text-clr1 text-2xl font-bold mb-5 items-center mt-5 p-4 items-center">
-          Fetching recent crime news in <span className='text-clr2 text-3xl font-bold underline ml-2'> { district || "..."}</span>
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+      <div className="w-full min-h-screen bg-gradient-to-r from-clr5 via-clr2 to-clr5 p-6">
+        <div className="container mx-auto">
+          <div className="text-center mb-8">
+            <h1 className="text-3xl font-bold text-white">
+              Recent Crime News in <span className="text-pink-100 text-4xl underline">{district}</span>
+            </h1>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {recentnews.map((news, index) => (
+              <div 
+                key={index} 
+                className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105"
+              >
+                <div className="p-4 bg-clr3 text-white">
+                  <h2 className="text-xl font-bold line-clamp-2 h-8 py-auto text-center">{recentnews.title || "TITLE"}</h2>
+                </div>
+                <div className="p-3 bg-pink-100 text-clr3 font-semibold">
+                  <p>{recentnews.date || "DATE"}</p>
+                </div>
+                <div className="p-4 bg-gray-100">
+                  <a 
+                    href={recentnews.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block w-full bg-clr3 hover:bg-clr1 text-white font-bold py-2 px-4 rounded text-center transition duration-300"
+                  >
+                    Know More
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
        
-      <div className='news border-2 border-pink-600 rounded-md w-24 h-48'>{recentnews[0].date || "wait"}</div>
+      <div className='news w-full h-14 bg-black text-white'>{recentnews[0].date || "wait"}</div>
+      {/* <div className='news w-full h-14 bg-black text-white'>{recentnews[0].time || "wait"}</div>
+      <div className='news w-full h-14 bg-black text-white'>{recentnews[0].title || "wait"}</div>
+      <div className='news w-full h-14 bg-black text-white'>{recentnews[0].link || "wait"}</div> */}
 
 
 
@@ -117,12 +163,7 @@ const RecentCrimes = () => {
 
 
       </div>
-
-
-
-
     </div>
-
     </>
   )
 }
