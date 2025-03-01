@@ -55,7 +55,7 @@ const Header = () => {
             <li className="px-4 py-2 text-xl text-clr2 font-bold hover:bg-gradient-to-r from-clr2 to-clr3 hover:text-clr5 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
               <Link to="/feedback">Contribute</Link>
             </li>
-            <li className="px-4 py-2 text-2xl bg-clr1 text-white cursor-pointer rounded-full font-bold hover:bg-gradient-to-r from-clr2 to-clr3 hover:text-clr5 transition duration-300 ease-in-out transform hover:scale-105">
+            <li className="px-2 py-2 text-xl bg-clr1 text-white cursor-pointer rounded-full font-bold hover:bg-gradient-to-r from-clr2 to-clr3 hover:text-clr5 transition duration-300 ease-in-out transform hover:scale-105">
               {user ? (
                 <button onClick={handleLogout}>Logout</button>
               ) : (
