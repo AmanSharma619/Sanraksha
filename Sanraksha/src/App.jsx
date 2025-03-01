@@ -7,6 +7,7 @@ import Components from './components/';
 import Safezones from './components/Safezones';
 import RecentCrimes from './components/RecentCrimes';
 import Feedback from './components/Feedback';
+import Precautionary from './components/Precautionary';
 function App() {
   return (
     <BrowserRouter basename="/">
@@ -19,6 +20,7 @@ function App() {
           <Route path="/safezones" element={<Safezones />} />
           <Route path="/recent_crimes" element={< RecentCrimes/>} />
           <Route path="/feedback" element={< Feedback/>} />
+          <Route path="/precautionary_measures" element={< Precautionary/>} />
           
           
         </Route>

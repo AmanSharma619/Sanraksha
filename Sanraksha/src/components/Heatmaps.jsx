@@ -7,6 +7,7 @@ const Heatmap = () => {
     }
   }, [])
   const [district,set_district]=useState('')
+  const [safety,set_safety]=useState('')
   let currposition;
   let d, s_i;
   let map, infoWindow;
@@ -116,6 +117,7 @@ const Heatmap = () => {
     d = await a[0]
     set_district(d)
     s_i = await a[1]
+    set_safety(s_i)
     style_setter(map)
 
   }
@@ -139,6 +141,9 @@ const Heatmap = () => {
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-clr5 via-clr4 to-clr5 opacity-100 flex flex-col items-center justify-center text-clr1 font-bold ">
         <div className="mx-auto h-6 flex text-clr1 text-2xl font-bold mb-5 items-center mt-5 p-4 items-center">
           Your District is <span className='text-clr2 text-3xl font-bold underline ml-2'> {district || "Fetching..."}</span>
+        </div>
+        <div className="mx-auto h-6 flex text-clr1 text-2xl font-bold mb-5 items-center mt-5 p-4 items-center">
+           Safety % is <span className='text-clr2 text-3xl font-bold underline ml-2'> {Number(safety *100).toFixed(1) || "Fetching..."}</span>
         </div>
         <div id="map" className="mx-auto rounded-xl h-2/3 w-2/3" />
         <div className="mx-auto h-6 flex text-clr1 text-xl font-bold mb-3 items-center mt-3 justify-center">

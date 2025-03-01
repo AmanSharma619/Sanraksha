@@ -68,7 +68,7 @@ const About = () => {
         </div> */}
       </div>
 
-      <div className="flex-1 flex-col bg-gradient-to-b from-clr5 via-clr1 to-clr1 p-8 pt-24 lg:p-16 lg:pt-24 flex items-center relative">
+      <div className="flex-1 flex-col bg-gradient-to-b from-clr5 via-clr3 to-clr3 p-8 pt-24 lg:p-16 lg:pt-24 flex items-center relative">
       <div className="w-120 aspect-square overflow-hidden opacity-0 animate-fadeIn">
           <img 
             src="https://styleguide.iu.edu/images/1-1_placeholder_768px-768px.png" 
