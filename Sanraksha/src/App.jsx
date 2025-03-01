@@ -8,6 +8,8 @@ import Safezones from './components/Safezones';
 import RecentCrimes from './components/RecentCrimes';
 import Feedback from './components/Feedback';
 import Precautionary from './components/Precautionary';
+import SecureDashboard from './utils/SecureDashboard'
+
 function App() {
   return (
     <BrowserRouter basename="/">
@@ -15,7 +17,7 @@ function App() {
         <Route path="/" element={<Components />}>
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />}/>
+          <Route element={<SecureDashboard />}><Route path="/dashboard" element={<Dashboard />} /></Route>
           <Route path="/heatmaps" element={<Heatmaps />} />
           <Route path="/safezones" element={<Safezones />} />
           <Route path="/recent_crimes" element={< RecentCrimes/>} />

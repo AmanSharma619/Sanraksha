@@ -43,7 +43,7 @@ const About = () => {
 
   return (
     <div className={`flex flex-col lg:flex-row min-h-[600px] w-full transition-opacity duration-800 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-      <div className="flex-1 flex flex-col bg-gradient-to-b from-clr5 via-clr2 to-clr2 p-8 lg:p-16 relative overflow-hidden">
+      <div className="flex-1 flex flex-col bg-gradient-to-b from-clr5 via-clr4 to-clr4 p-8 lg:p-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-radial-gradient pointer-events-none"></div>
         <div className="max-w-[90%] opacity-0 animate-slideUp">
           <h2 className="text-6xl lg:text-5xl text-center font-bold mb-6 text-clr1 leading-tight">
@@ -81,19 +81,19 @@ const About = () => {
           {features.map((feature, index) => (
             <div 
               key={feature.id} 
-              className={`bg-white/10 rounded-xl p-6 relative backdrop-blur-sm shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl opacity-0 ${isVisible ? 'animate-slideInRight' : ''}`}
+              className={`bg-white/10 rounded-xl p-6 relative backdrop-blur-sm shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl opacity-0 border border-clr2 hover:border-clr1 ${isVisible ? 'animate-slideInRight' : ''}`}
               style={{ animationDelay: `${0.4 + index * 0.2}s` }}
             >
               <div className="absolute top-4 right-4 text-2xl font-bold text-white/30">
                 {feature.id}
               </div>
-              <div className="inline-block p-2 mb-4 bg-white/15 rounded-lg text-white">
+              <div className="inline-block p-2 mb-4 bg-white/15 rounded-lg text-clr1">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">
+              <h3 className="text-xl font-semibold text-clr1 mb-2">
                 {feature.title}
               </h3>
-              <p className="text-sm text-white/80 leading-relaxed">
+              <p className="text-md text-clr1 leading-relaxed">
                 {feature.description}
               </p>
               <div className="absolute inset-0 rounded-xl bg-shimmer pointer-events-none"></div>
