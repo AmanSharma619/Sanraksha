@@ -2,26 +2,23 @@ import React from 'react'
 import { useEffect,useRef } from 'react'
 import "./About.css"
 const About = () => {
+  const heading=useRef(null)
   useEffect(()=>{
+   
     gsap.from("#first img",{
-      // x:-600,
-      width: "0px",
-      // rotation: 30,
-      duration:1.3,
-      
-      scrollTrigger: {
-        trigger: "#first",
-        start: "center bottom",
+      duration: 1,
+      y:300,
+      scrollTrigger:{
+        trigger:"#first",
+        start: "center bottom"
       }
-     
     })
     gsap.from("#first .content",{
-      x:1000,
-      duration:1.3,
-      // ease: "elastic.out",
-      scrollTrigger: {
-        trigger: "#first",
-        start: "center bottom",
+      duration: 1,
+      y:-600,
+      scrollTrigger:{
+        trigger:"#first",
+        start: "center bottom"
       }
     })
    
@@ -41,13 +38,78 @@ const About = () => {
         start: "center bottom"
       }
     })
-    
+   
+    gsap.from("#third img",{
+      duration: 1,
+      y:300,
+      scrollTrigger:{
+        trigger:"#third",
+        start: "center bottom"
+      }
+    })
+    gsap.from("#third .content",{
+      duration: 1,
+      y:-600,
+      scrollTrigger:{
+        trigger:"#third",
+        start: "center bottom"
+      }
+    })
+   
+    gsap.from("#fourth img",{
+      duration: 1,
+      y:300,
+      scrollTrigger:{
+        trigger:"#fourth",
+        start: "center bottom"
+      }
+    })
+    gsap.from("#fourth .content",{
+      duration: 1,
+      y:-600,
+      scrollTrigger:{
+        trigger:"#fourth",
+        start: "center bottom"
+      }
+    })
+   
+    gsap.from("#fifth img",{
+      duration: 1,
+      y:300,
+      scrollTrigger:{
+        trigger:"#fifth",
+        start: "center bottom"
+      }
+    })
+    gsap.from("#fifth .content",{
+      duration: 1,
+      y:-600,
+      scrollTrigger:{
+        trigger:"#fifth",
+        start: "center bottom"
+      }
+    })
+   gsap.from(heading.current.children,{
+    y:100,
+    duration:1,
+    stagger:0.1,
+    scrollTrigger:{
+      trigger:".heading",
+      start:"center bottom"
+    }
+   })
+
 
   },[])
   return (
     <div className='features text-white min-h-screen flex flex-col gap-5'id='feature'>
-     <div className="heading text-center mb-7 ">
-      Features
+     <div className="heading text-center mb-7 " ref={heading}>
+     {"Features".split("").map((letter, index) => (
+          <span key={index} className="inline-block">
+            {letter}
+          </span>
+        ))}
+      </div>
       <div className="features-list flex items-center justify-around  " id='first'>
         <img src="https://i.postimg.cc/5yhd4RD3/heatmaps.png" alt="" />
         <div className="content w-2/4">
@@ -84,7 +146,6 @@ const About = () => {
         </div>
       </div>
 
-     </div>
     </div>
   )
 }

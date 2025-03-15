@@ -10,7 +10,7 @@
 }
 .features-list{
     min-height: 50vh;
-    box-shadow: 0px 10px 20px rgba(255, 121, 143, 0.45);
+    box-shadow: 0px 5px  rgba(255, 121, 143, 0.45);
     max-height: 50vh;
     overflow: hidden;
 }
@@ -26,4 +26,10 @@
 }
 .content h2{
     font-size: 29px;
+}
+.heading span{
+    position: relative;
+}
+.heading{
+    overflow: hidden;
 }
