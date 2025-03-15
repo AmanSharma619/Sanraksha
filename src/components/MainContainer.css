@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+body{
+    background-color: black;
+    /* background: url("/public/css-pattern-by-magicpattern.png") no-repeat ; */
+}
+.main-heading span:nth-child(2){
+    font-family: "Inter", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+}
+.main-heading{
+    gap: 10px;
+}
+.subhead span:nth-child(2){
+    font-family: "Inter", sans-serif;
+    font-size: 75px;
+    font-weight: 500;
+    
+}
+.subhead span{
+    font-family: "Inter", sans-serif;
+    font-size: 75px;
+    font-weight: 500;
+}
+model-viewer{
+    height: 70vh;
+    width: 70vw;
+}
