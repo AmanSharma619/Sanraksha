@@ -1,0 +1,19 @@
+.main{
+    /* background: linear-gradient( to top, rgba(160, 15, 20, 0.55),rgba(0, 0, 0, 0.8)); */
+    background: url(/public/css-pattern-by-magicpattern.png);
+}
+form{
+    height: 70vh;
+    backdrop-filter: blur(4px);
+    background: linear-gradient(to top, rgba(160, 15, 20, 0.45),rgba(0, 0, 0, 0.8));
+    box-shadow: 0px 20px 30px #CE2742;
+}
+button{
+    background-color: white;
+  
+}
+button:hover{
+    background-color: black;
+    color: #CE2742;
+
+}
