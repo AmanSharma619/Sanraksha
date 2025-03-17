@@ -3,7 +3,10 @@ import { User } from "lucide-react";
 
 
 
-const Safezones = () => {
+const Safezones = (props) => {
+    const position={lat:props.lat,
+        lng:props.lng
+    }
 
     const [curr_position, func] = useState({})
 
@@ -45,7 +48,7 @@ const Safezones = () => {
 
 
 
-    async function findPlaces(loc) {
+    async function findPlaces(position) {
         // console.log(loc);
 
         const { Place } = await google.maps.importLibrary("places");
@@ -82,7 +85,7 @@ const Safezones = () => {
                 textQuery: "police",
                 fields: ["displayName", "location", "businessStatus", "nationalPhoneNumber"],
                 // includedType: "police station",
-                locationBias: loc,
+                locationBias: position,
                 isOpenNow: true,
                 language: "en-US",
                 maxResultCount: 8,
@@ -144,7 +147,7 @@ const Safezones = () => {
                 textQuery: "hospital",
                 fields: ["displayName", "location", "businessStatus", "nationalPhoneNumber"],
                 //includedType: "police station",
-                locationBias: loc,
+                locationBias: position,
                 isOpenNow: true,
                 language: "en-US",
                 maxResultCount: 8,
@@ -275,7 +278,7 @@ const Safezones = () => {
             <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
 
 
-                <div className="absolute space-y-4 text-left inset-0 z-10 bg-gradient-to-b from-clr5 via-clr4 to-clr5 opacity-100 flex flex-col items-center justify-center text-clr1 font-bold ">
+                <div className="absolute space-y-4 text-left inset-0 z-10  opacity-100 flex flex-col items-center justify-center text-clr1 font-bold ">
                 {/* <div className="py-4"> */}
                     <div id="map" className="mx-auto rounded-xl h-2/3 w-2/3 mb-4" />
                     *Click on the markers to know info
