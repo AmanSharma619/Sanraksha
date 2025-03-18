@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { User } from "lucide-react";
-
+import "./Safezones.css"
 
 
 const Safezones = (props) => {
@@ -8,16 +8,17 @@ const Safezones = (props) => {
         lng:props.lng
     }
 
-    const [curr_position, func] = useState({})
+    // const [curr_position, func] = useState({})
 
 
     useEffect(() => {
-        let a = confirm("Sanraksha wants to know your location")
-        if (a == 1) {
-            initMap()
-        }
+        // let a = confirm("Sanraksha wants to know your location")
+        // if (a == 1) {
+        //     initMap()
+        // }
+        initMap()
     }, [])
-
+    
     let map, infoWindow;
 
     function geocodeLatLng(geocoder, map, curr_location, infowindow) {
@@ -203,19 +204,19 @@ const Safezones = (props) => {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude,
                     };
-                    func(pos)
+                    // func(pos)
 
                     // console.log(curr_position);
 
+                    const psn={lat:props.lat,lng:props.lng}
 
+                    findPlaces(psn)
+                    geocodeLatLng(geocoder, map, psn, infoWindow)
 
-                    findPlaces(pos)
-                    geocodeLatLng(geocoder, map, pos, infoWindow)
-
-                    infoWindow.setPosition(pos);
+                    infoWindow.setPosition(psn);
                     infoWindow.setContent("Your location");
                     infoWindow.open(map);
-                    map.setCenter(pos);
+                    map.setCenter(psn);
                     const glyphImg = document.createElement("img");
 
                     glyphImg.src =
@@ -235,7 +236,7 @@ const Safezones = (props) => {
                     beachFlagImg.width = "80"
                     const marker = new AdvancedMarkerElement({
                         map,
-                        position: pos,
+                        position: psn,
                         content: pinScaled.element,
                     });
 
@@ -258,7 +259,7 @@ const Safezones = (props) => {
 
 
 
-        map = new Map(document.getElementById("map"), {
+        map = new Map(document.getElementById("map_1"), {
             center: { lat: 28.7041, lng: 77.1025 },
             zoom: 13,
             mapTypeId: 'satellite',
@@ -274,15 +275,15 @@ const Safezones = (props) => {
 
 
     return (
-        <>
+        
             <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
 
 
                 <div className="absolute space-y-4 text-left inset-0 z-10  opacity-100 flex flex-col items-center justify-center text-clr1 font-bold ">
                 {/* <div className="py-4"> */}
-                    <div id="map" className="mx-auto rounded-xl h-2/3 w-2/3 mb-4" />
-                    *Click on the markers to know info
-                    <div className="mx-auto h-6 flex text-clr1 text-xl font-bold mb-3 items-center">
+                    <div id="map_1" className="mx-auto rounded-xl h-full w-full" />
+                    {/* *Click on the markers to know info */}
+                    {/* <div className="mx-auto h-6 flex text-clr1 text-xl font-bold mb-3 items-center">
 
                         <img src="https://cdn-icons-png.flaticon.com/512/9187/9187604.png" alt="user" width={30} height={60} />
                         - Your Location
@@ -298,11 +299,11 @@ const Safezones = (props) => {
                         <img src="https://i.postimg.cc/TwQCDD85/19068317-removebg-preview.png" alt="user" width={35} height={60} />
                         -Police Stations
 
-                    </div>
+                    </div> */}
                     {/* </div> */}
                 </div>
             </div>
-        </>
+       
     )
 }
 

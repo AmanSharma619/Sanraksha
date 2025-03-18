@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-const Heatmap = () => {
+const Heatmap = (props) => {
   useEffect(() => {
-    let a = confirm("Sanraksha wants to know your location")
-    if (a == 1) {
-      initMap()
-    }
+    // let a = confirm("Sanraksha wants to know your location")
+    // if (a == 1) {
+    //   initMap()
+    // }
+    initMap()
   }, [])
   const [district,set_district]=useState('')
   const [safety,set_safety]=useState('')
@@ -37,13 +38,13 @@ const Heatmap = () => {
 
 
   }
-  async function get_data() {
+  async function get_data(lat,lng) {
     
     console.log("get data");
     console.log(currposition);
     let loc = await {
-      latitude: 28.6417,
-      longitude:77.1225
+      latitude: lat,
+      longitude:lng
     }
     const response = await fetch("http://127.0.0.1:5000/predict", {
       method: "POST",
@@ -113,7 +114,7 @@ const Heatmap = () => {
   async function setvalues() {
     console.log(currposition);
     
-    let a = await get_data()
+    let a = await get_data(props.lat,props.lng)
     d = await a[0]
     set_district(d)
     s_i = await a[1]
@@ -130,7 +131,8 @@ const Heatmap = () => {
       // mapTypeId: 'satellite',
       mapId: "498661eafe8ce553",
     });
-    getlocation()
+    // getlocation()
+    setvalues()
     
   }
 
@@ -138,7 +140,7 @@ const Heatmap = () => {
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
 
 
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-clr5 via-clr4 to-clr5 opacity-100 flex flex-col items-center justify-center text-clr1 font-bold ">
+      <div className="absolute inset-0 z-10  opacity-100 flex flex-col items-center justify-center text-clr1 font-bold ">
         <div className="mx-auto h-6 flex text-clr1 text-2xl font-bold mb-5 items-center mt-5 p-4 items-center">
           Your District is <span className='text-clr2 text-3xl font-bold underline ml-2'> {district || "Fetching..."}</span>
         </div>
