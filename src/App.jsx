@@ -8,7 +8,8 @@ import Safezones from './components/Safezones';
 import RecentCrimes from './components/RecentCrimes';
 import Feedback from './components/Feedback';
 import Precautionary from './components/Precautionary';
-import SecureDashboard from './utils/SecureDashboard'
+import SecureDashboard from './utils/SecureDashboard';
+import Kavach from './components/Kavach';
 
 function App() {
   return (
@@ -23,8 +24,7 @@ function App() {
           <Route path="/recent_crimes" element={< RecentCrimes/>} />
           <Route path="/feedback" element={< Feedback/>} />
           <Route path="/precautionary_measures" element={< Precautionary/>} />
-          
-          
+          <Route path="/kavach" element={< Kavach/>} />
         </Route>
       </Routes>
     </BrowserRouter>

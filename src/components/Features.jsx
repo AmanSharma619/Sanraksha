@@ -1,4 +1,3 @@
-import React from 'react'
 import "./Features.css"
 import { useEffect,useState } from 'react'
 import Safezones from "./Safezones.jsx"
@@ -14,6 +13,7 @@ const Features = () => {
    t.from("#fourth",{ scaleX: 0,duration:0.8,opacity:0,  transformOrigin: "100% 50%"})
    t.from("#third",{ scaleX: 0,duration:0.8,opacity:0,  transformOrigin: "100% 50%"})
   },[])
+
   useEffect(() => {
     let a = confirm("Sanraksha wants to know your location");
     if (a) {
