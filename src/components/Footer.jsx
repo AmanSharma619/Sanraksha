@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="relative flex py-0 px-0 ">
       <div className="w-1/2 bg-black flex flex-col justify-center px-12 py-4 text-left left">
         <h2 className="font-bold text-4xl text-white mb-1">Sanraksha</h2>
-        <p className="text-xl text-white/80">Working towards a safer Delhi for women</p>
+        <p className="text-xl text-white/80">Working Towards a Safer India for Citizens</p>
       </div>
       <div className="w-1/2 bg-black flex flex-col justify-center items-center space-y-4 py-6 right">
         <div className="flex space-x-6">

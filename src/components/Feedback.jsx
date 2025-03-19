@@ -338,7 +338,7 @@ function updateInfoWindow(content, center) {
   <div className="mx-auto h-6 flex text-clr1 text-2xl font-bold mb-5 items-center mt-5 p-4 items-center">
   <div className="feedback" id="feedback">
 
-<div id="card" className="text-clr1">
+<div id="card" className="text-clr1 ">
   *Search Places Here or Mark Directly On Map
 </div>
 

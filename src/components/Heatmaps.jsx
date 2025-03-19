@@ -141,28 +141,28 @@ const Heatmap = (props) => {
 
 
       <div className="absolute inset-0 z-10  opacity-100 flex flex-col items-center justify-center text-clr1 font-bold ">
-        <div className="mx-auto h-6 flex text-clr1 text-2xl font-bold mb-5 items-center mt-5 p-4 items-center">
+        <div className="mx-auto h-6 flex text-white text-2xl font-bold mb-5 items-center mt-5 p-4 items-center">
           Your District is <span className='text-clr2 text-3xl font-bold underline ml-2'> {district || "Fetching..."}</span>
         </div>
-        <div className="mx-auto h-6 flex text-clr1 text-2xl font-bold mb-5 items-center mt-5 p-4 items-center">
+        <div className="mx-auto h-6 flex text-white text-2xl font-bold mb-5 items-center mt-5 p-4 items-center">
            Safety % is <span className='text-clr2 text-3xl font-bold underline ml-2'> {Number(safety *100).toFixed(1) || "Fetching..."}</span>
         </div>
         <div id="map" className="mx-auto rounded-xl h-2/3 w-2/3" />
-        <div className="mx-auto h-6 flex text-clr1 text-xl font-bold mb-3 items-center mt-3 justify-center">
+        <div className="mx-auto h-6 flex text-white text-xl font-bold mb-3 items-center mt-3 justify-center">
           <div className="bg-red-600 w-8 h-7 ">
 
           </div>
 
           - Generally not that safe
         </div>
-        <div className="mx-auto h-6 flex text-clr1 text-xl font-bold mb-3 items-center mt-3">
+        <div className="mx-auto h-6 flex text-white text-xl font-bold mb-3 items-center mt-3">
           <div className="bg-yellow-500 w-8 h-7 ">
 
           </div>
 
           - Generally moderately safe
         </div>
-        <div className="mx-auto h-6 flex text-clr1 text-xl font-bold mb-3 items-center mt-3">
+        <div className="mx-auto h-6 flex text-white text-xl font-bold mb-3 items-center mt-3">
           <div className="bg-green-600 w-8 h-7 ">
 
           </div>
