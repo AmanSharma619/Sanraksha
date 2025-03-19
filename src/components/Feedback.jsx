@@ -31,7 +31,7 @@ function Feedback(){
   
     console.log("Submitting data:", data);
   
-    const response = await fetch("http://localhost:3000/", {
+    const response = await fetch("https://sanraksha-community.onrender.com/", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -81,7 +81,7 @@ function Feedback(){
     }
   }
   useEffect(() => {
-     fetch("http://localhost:3000/")
+     fetch("https://sanraksha-community.onrender.com/")
   .then(async (res) => {
     let a = await res.json();
     console.log(a);
@@ -128,7 +128,7 @@ async function initMap() {
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
   
-  map =await new Map(document.getElementById("map"), {
+  map =await new Map(document.getElementById("map2"), {
     zoom: 11,
     center: position,
     mapId: "DEMO_MAP_ID",
@@ -334,15 +334,15 @@ function updateInfoWindow(content, center) {
   <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
 
 
-<div className="absolute inset-0 z-10 bg-gradient-to-b from-clr5 via-clr4 to-clr5 opacity-100 flex flex-col items-center justify-center text-clr1 font-bold ">
+<div className="absolute inset-0 z-10  opacity-100 flex flex-col items-center justify-center text-clr1 font-bold ">
   <div className="mx-auto h-6 flex text-clr1 text-2xl font-bold mb-5 items-center mt-5 p-4 items-center">
-  <div className="main" id="main">
+  <div className="feedback" id="feedback">
 
 <div id="card" className="text-clr1">
   *Search Places Here or Mark Directly On Map
 </div>
 
-<div id="map"/>
+<div id="map2"/>
 
 <div className="form " id="form">
       <span id="svg" onClick={()=>{

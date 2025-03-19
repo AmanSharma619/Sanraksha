@@ -1,6 +1,6 @@
 /* 
- * Always set the map height explicitly to define the size of the div element
- * that contains the map. 
+ * Always set the map2 height explicitly to define the size of the div element
+ * that contains the map2. 
  */
  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap');
  *{
@@ -10,21 +10,19 @@
  html{
   overflow:hidden;
  }
- .main{
+ .feedback{
   display: flex;
   flex-direction: column;
   gap: 20px;
  }
- #map {
+ #map2 {
   position: relative;
   
   margin: auto;
   height: 60vh;
   width:78vw;
   border-radius: 30px;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0 cover 40%;
+
 }
 #card{
   text-align: center;
@@ -84,7 +82,7 @@ gmp-place-autocomplete {
   font-weight: bold;
 }
 
-#map #infowindow-content {
+#map2 #infowindow-content {
   display: inline;
 }
 .button{
@@ -195,11 +193,7 @@ gmp-place-autocomplete {
   width: 100%;
 }
   
-@keyframes move {
-  100% {
-      transform: translate3d(0, 0, 1px) rotate(360deg);
-  }
-}
+
 
 .background {
 
@@ -788,7 +782,7 @@ gmp-place-autocomplete {
   gmp-place-autocomplete{
     width: 86vw;
   }
-  #map{
+  #map2{
     justify-content: center;
     align-items: center;
     height: 76vh;

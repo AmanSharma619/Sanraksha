@@ -1,6 +1,9 @@
 import "./Features.css"
 import { useEffect,useState } from 'react'
 import Safezones from "./Safezones.jsx"
+import Feedback from './Feedback.jsx'
+import Heatmaps from "./Heatmaps.jsx"
+import { Link } from 'react-router-dom'
 const Features = () => {
   useEffect(()=>{
    var t=gsap.timeline()
@@ -63,16 +66,31 @@ async function initMap() {
        <div id="map1" className='hidden' />
     <h1 className='text-white mb-9'>Safety Dashboard</h1>
     <div class="grid h-full w-full grid-cols-3 grid-rows-6 gap-4">
-      <div class="col-span-2 row-span-3 rounded-3xl box" id='first'>
+      <div class="col-span-2 row-span-3 rounded-3xl box " id='first'>
+        
       {position ? <Safezones lat={position.lat} lng={position.lng} /> : <p>Loading location...</p>}
       </div>
       <div class="row-span-4 rounded-3xl box" id='second'>
 
       </div>
-      <div class="row-span-3 rounded-3xl box" id='third'></div>
-      <div class="row-span-3 rounded-3xl box" id='fourth'></div>
-      <div class="row-span-2 rounded-3xl box" id='fifth'></div>
+      <div class="row-span-3 rounded-3xl box" id='third'>
+      {position ? <Heatmaps lat={position.lat} lng={position.lng} /> : <p>Loading location...</p>}
+      </div>
+      <div class="row-span-3 rounded-3xl box" id='fourth'>
+     
+      </div>
+      <div className="row-span-2 rounded-3xl box relative" id="fifth">
+  <img src="/Feedback.png" className="w-full h-full object-cover rounded-3xl" alt="" />
+  <Link to="/feedback">
+  <div className="cover h-full w-full absolute top-0 left-0 z-10 rounded-3xl text-white">
+    Community Feedback
+    
+  </div>
+  </Link>
+</div>
+
     </div>
+    
   </div>
   )
 }
