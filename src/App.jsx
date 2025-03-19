@@ -3,7 +3,7 @@ import Landing from './components/Landing';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Heatmaps from './components/Heatmaps';
-import Components from './components/';
+import Components from './Components.jsx';
 import Safezones from './components/Safezones';
 import RecentCrimes from './components/RecentCrimes';
 import Feedback from './components/Feedback';
