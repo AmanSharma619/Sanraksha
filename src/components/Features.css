@@ -5,3 +5,31 @@
 h1{
     font-size: 50px;
 }
+
+@keyframes widthAnimation {
+    from { width: 0px; opacity: 0; }
+    to { width: 100%; opacity: 1; }
+  }
+  
+  @keyframes heightAnimation {
+    from { height: 0px; opacity: 0; }
+    to { height: 100%; opacity: 1; }
+  }
+  
+  @keyframes scaleXAnimation {
+    from { transform: scaleX(0); opacity: 0; transform-origin: 100% 50%; }
+    to { transform: scaleX(1); opacity: 1; }
+  }
+  
+  #first {
+    animation: widthAnimation 0.8s ease forwards;
+  }
+  
+  #second, #fifth {
+    animation: heightAnimation 0.8s ease forwards;
+  }
+  
+  #third, #fourth {
+    animation: scaleXAnimation 0.8s ease forwards;
+  }
+  
