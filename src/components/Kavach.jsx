@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from "react";
 
 const BACKEND_URL = "http://localhost:8000";
 
-const ChatBot = () => {
+const Kavach = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -17,145 +18,86 @@ const ChatBot = () => {
     scrollToBottom();
   }, [messages]);
 
-  useEffect(() => {
-    async function testConnection() {
-      try {
-        const response = await fetch(`${BACKEND_URL}/test/`, {
-          method: "POST",
-          headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-          },
-          mode: "cors",
-          body: JSON.stringify({})
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        console.log("Test connection successful:", data);
-      } catch (error) {
-        console.error("Test connection failed:", error);
-      }
-    }
-    
-    testConnection();
-  }, []);
-  
   const sendMessage = async () => {
     if (!message.trim()) return;
-
     try {
       setLoading(true);
       setError(null);
-      
       const userMessage = message.trim();
       setMessages(prev => [...prev, { text: userMessage, sender: "user" }]);
       setMessage("");
 
       const response = await fetch(`${BACKEND_URL}/ask/`, {
         method: "POST",
-        headers: { 
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        mode: "cors",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ input: userMessage })
       });
-
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
-      }
-
-      const data = await response.json();
       
-      setMessages(prev => [...prev, { 
-        text: data.answer || "I couldn't process that request.", 
-        sender: "bot" 
-      }]);
+      if (!response.ok) throw new Error(`Error: ${response.status}`);
+      const data = await response.json();
 
+      setMessages(prev => [...prev, { text: data.answer || "I couldn't process that request.", sender: "bot" }]);
     } catch (err) {
-      console.error("Chat error:", err);
       setError("Failed to get response from the bot");
-      setMessages(prev => [...prev, { 
-        text: "Sorry, I'm having trouble processing your request right now.", 
-        sender: "bot" 
-      }]);
     } finally {
       setLoading(false);
     }
   };
 
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter' && !loading) {
-      sendMessage();
-    }
-  };
-
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
-      <div className="bg-red-300 p-6 w-96 rounded-lg shadow-lg">
-        <h2 className="text-xl font-bold text-center text-red-900">Chat</h2>
-        
-        <div className="mt-4 h-64 overflow-y-auto bg-gray-800 rounded-lg p-3">
-          {messages.length === 0 ? (
-            <div className="text-center text-gray-400 py-4">
-              Start a conversation with Kavach...
-            </div>
-          ) : (
-            messages.map((msg, index) => (
-              <div 
-                key={index} 
-                className={`mb-2 p-2 rounded-lg ${
-                  msg.sender === "user" 
-                    ? "bg-red-900 text-white ml-auto max-w-[70%]" 
-                    : "bg-gray-700 text-white mr-auto max-w-[70%]"
-                }`}
-              >
-                {msg.text}
-              </div>
-            ))
-          )}
-          {loading && (
-            <div className="text-center py-2">
-              <div className="inline-block animate-pulse">Kavach is thinking...</div>
-            </div>
-          )}
-          {error && (
-            <div className="text-red-500 text-center py-2">
-              {error}
-            </div>
-          )}
-          <div ref={messagesEndRef} />
-        </div>
-        
-        <div className="mt-4">
-          <div className="flex gap-2">
+    <div className="fixed bottom-6 right-6 z-50">
+      {!isOpen ? (
+        <button 
+          onClick={() => setIsOpen(true)}
+          className="bg-red-800 hover:bg-red-700 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-xl transition-all duration-300"
+        >
+          <span className="text-2xl">💬</span>
+        </button>
+      ) : (
+        <div className="w-96 bg-black text-white rounded-lg shadow-lg overflow-hidden border-2 border-red-600 animate-fadeIn">
+          <div className="flex justify-between items-center p-4 bg-red-800">
+            <h2 className="text-lg font-bold">Kavach AI</h2>
+            <button onClick={() => setIsOpen(false)} className="text-white bg-transparent hover:text-gray-300">✕</button>
+          </div>
+          <div className="h-72 overflow-y-auto p-3 bg-gray-900">
+            {messages.length === 0 ? (
+              <div className="text-center text-gray-500 py-4">Start a conversation...</div>
+            ) : (
+              messages.map((msg, index) => (
+                <div 
+                  key={index} 
+                  className={`mb-2 p-3 rounded-lg text-sm max-w-[80%] ${msg.sender === "user" ? "bg-red-700 text-white ml-auto" : "bg-gray-700 text-white mr-auto"}`}
+                >
+                  {msg.text}
+                </div>
+              ))
+            )}
+            {loading && <div className="text-center text-gray-400 py-2">Kavach is typing...</div>}
+            {error && <div className="text-red-500 text-center py-2">{error}</div>}
+            <div ref={messagesEndRef} />
+          </div>
+          <div className="p-3 bg-gray-800 flex gap-2">
             <input
               type="text"
-              placeholder="Type your safety question..."
-              className="w-full p-2 rounded-lg text-black"
+              placeholder="Ask something..."
+              className="flex-1 p-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-600"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              onKeyPress={handleKeyPress}
+              onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
               disabled={loading}
             />
             <button
               onClick={sendMessage}
               disabled={loading || !message.trim()}
-              className={`bg-red-900 hover:bg-red-500 px-4 py-2 rounded-lg transition-all ${
-                loading || !message.trim() ? "opacity-50 cursor-not-allowed" : ""
-              }`}
+              className={`bg-red-700 hover:bg-red-600 px-4 py-2 rounded-lg transition-all text-white ${loading || !message.trim() ? "opacity-50 cursor-not-allowed" : ""}`}
             >
-              →
+              ➤
             </button>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
 
-export default ChatBot;
+export default Kavach;
