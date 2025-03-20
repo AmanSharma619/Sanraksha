@@ -828,4 +828,71 @@ gmp-place-autocomplete {
 
 
  }
+
+ .feedback-info {
+  padding: 1px;
+  max-width: 300px;
+  font-family: Arial, sans-serif;
+}
+
+.feedback-info h3 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  color: #1e40af;
+}
+
+.feedback-info h4 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: #4b5563;
+}
+
+.feedback-info p {
+  margin: 0 0 15px;
+  font-size: 14px;
+  line-height: 1.4;
+}
  
+ .voting-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.vote-up, .vote-down {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+}
+
+.vote-up {
+  color: #16a34a;
+}
+
+.vote-down {
+  color: #dc2626;
+}
+
+.vote-up:hover {
+  color: #15803d;
+  transform: translateY(-2px);
+}
+
+.vote-down:hover {
+  color: #b91c1c;
+  transform: translateY(2px);
+}
+
+.vote-count {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 10px;
+}

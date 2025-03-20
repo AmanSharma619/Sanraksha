@@ -28,7 +28,7 @@ const Kavach = () => {
       setMessage("");
 
       const response = await fetch(`${BACKEND_URL}/ask/`, {
-        method: "POST",
+        method: "POST, OPTIONS",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ input: userMessage })
       });
