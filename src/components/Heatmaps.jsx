@@ -79,7 +79,7 @@ const Heatmap = (props) => {
             };
             break;
           }
-          else if (0.75 <= s_i < .90) {
+          else if (0.75 <= s_i && s_i< .90) {
             return {
               strokeColor: "yellow",
               strokeWeight: 2,
