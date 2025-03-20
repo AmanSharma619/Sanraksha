@@ -33,7 +33,7 @@
 .heading{
     overflow: hidden;
 }
-
+/* 
 @keyframes fadeInUp {
     from { transform: translateY(300px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
@@ -68,4 +68,4 @@
   .heading span:nth-child(4) { animation-delay: 0.3s; }
   .heading span:nth-child(5) { animation-delay: 0.4s; }
   .heading span:nth-child(6) { animation-delay: 0.5s; }
-  
+   */

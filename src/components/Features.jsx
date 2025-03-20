@@ -68,7 +68,7 @@ const Features = () => {
       <div class="grid h-full w-full grid-cols-3 grid-rows-[6] gap-4">
         <div class="col-span-2 row-span-1 rounded-3xl box relative " id='first_item'>
 
-          {position ? <Safezones lat={position.lat} lng={position.lng} /> : <p>Loading location...</p>}
+          {position ? <Safezones lat={ 28.6779} lng={ 77.2611}  /> : <p>Loading location...</p>}
           <div className="info h-full w-full absolute top-0 left-0 z-10 rounded-3xl text-white flex flex-col">
            
             <h1>Safe Zones</h1>
@@ -96,8 +96,8 @@ const Features = () => {
          </div>
           </Link>
         </div>
-        <div class="col-span-2 row-span-1 rounded-3xl box relative" id='fourth_item'>
-          {position ? <Heatmaps lat={position.lat} lng={position.lng} /> : <p>Loading location...</p>}
+        <div class="col-span-2 row-span-1 rounded-3xl box relative " id='fourth_item'>
+          {position ? <Heatmaps lat={ 28.6779} lng={ 77.2611} /> : <p>Loading location...</p>}
           <div className="cover h-full w-full absolute top-0 left-0 z-10 rounded-3xl text-white flex flex-col">
            
            <h1 className="z-20 relative">Safety Score</h1>

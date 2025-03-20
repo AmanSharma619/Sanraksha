@@ -19,29 +19,23 @@ const Kavach = () => {
   }, [messages]);
 
   const sendMessage = async () => {
-    if (!message.trim()) return;
-    try {
-      setLoading(true);
-      setError(null);
-      const userMessage = message.trim();
-      setMessages(prev => [...prev, { text: userMessage, sender: "user" }]);
-      setMessage("");
+    const b={"input":message}
+    const response = await fetch("http://127.0.0.1:8000/ask/", {
+      method: "POST",
+      body: JSON.stringify(b),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    let a = await response.json()
+    let ab=a.answer
+    let newDiv = document.createElement("div");
+    newDiv.textContent =ab;
+    newDiv.style.width = "350px";
+    newDiv.style.height = "100px";
+    let c=document.getElementById("fill")
+    c.appendChild(newDiv)
 
-      const response = await fetch(`${BACKEND_URL}/ask/`, {
-        method: "POST, OPTIONS",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ input: userMessage })
-      });
-      
-      if (!response.ok) throw new Error(`Error: ${response.status}`);
-      const data = await response.json();
-
-      setMessages(prev => [...prev, { text: data.answer || "I couldn't process that request.", sender: "bot" }]);
-    } catch (err) {
-      setError("Failed to get response from the bot");
-    } finally {
-      setLoading(false);
-    }
   };
 
   return (
@@ -59,7 +53,7 @@ const Kavach = () => {
             <h2 className="text-lg font-bold">Kavach AI</h2>
             <button onClick={() => setIsOpen(false)} className="text-white bg-transparent hover:text-gray-300">✕</button>
           </div>
-          <div className="h-72 overflow-y-auto p-3 bg-gray-900">
+          <div className="h-72 overflow-y-auto p-3 bg-gray-900" id="fill">
             {messages.length === 0 ? (
               <div className="text-center text-gray-500 py-4">Start a conversation...</div>
             ) : (

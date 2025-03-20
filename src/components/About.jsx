@@ -3,104 +3,104 @@ import { useEffect,useRef } from 'react'
 import "./About.css"
 const About = () => {
   const heading=useRef(null)
-  // useEffect(()=>{
+  useEffect(()=>{
    
-  //   gsap.from("#first img",{
-  //     duration: 1,
-  //     y:300,
-  //     scrollTrigger:{
-  //       trigger:"#first",
-  //       start: "center bottom"
-  //     }
-  //   })
-  //   gsap.from("#first .content",{
-  //     duration: 1,
-  //     y:-600,
-  //     scrollTrigger:{
-  //       trigger:"#first",
-  //       start: "center bottom"
-  //     }
-  //   })
+    gsap.from("#first img",{
+      duration: 1,
+      y:300,
+      scrollTrigger:{
+        trigger:"#first",
+        start: "center bottom"
+      }
+    })
+    gsap.from("#first .content",{
+      duration: 1,
+      y:-600,
+      scrollTrigger:{
+        trigger:"#first",
+        start: "center bottom"
+      }
+    })
    
-  //   gsap.from("#second img",{
-  //     duration: 1,
-  //     y:300,
-  //     scrollTrigger:{
-  //       trigger:"#second",
-  //       start: "center bottom"
-  //     }
-  //   })
-  //   gsap.from("#second .content",{
-  //     duration: 1,
-  //     y:-600,
-  //     scrollTrigger:{
-  //       trigger:"#second",
-  //       start: "center bottom"
-  //     }
-  //   })
+    gsap.from("#second img",{
+      duration: 1,
+      y:300,
+      scrollTrigger:{
+        trigger:"#second",
+        start: "center bottom"
+      }
+    })
+    gsap.from("#second .content",{
+      duration: 1,
+      y:-600,
+      scrollTrigger:{
+        trigger:"#second",
+        start: "center bottom"
+      }
+    })
    
-  //   gsap.from("#third img",{
-  //     duration: 1,
-  //     y:300,
-  //     scrollTrigger:{
-  //       trigger:"#third",
-  //       start: "center bottom"
-  //     }
-  //   })
-  //   gsap.from("#third .content",{
-  //     duration: 1,
-  //     y:-600,
-  //     scrollTrigger:{
-  //       trigger:"#third",
-  //       start: "center bottom"
-  //     }
-  //   })
+    gsap.from("#third img",{
+      duration: 1,
+      y:300,
+      scrollTrigger:{
+        trigger:"#third",
+        start: "center bottom"
+      }
+    })
+    gsap.from("#third .content",{
+      duration: 1,
+      y:-600,
+      scrollTrigger:{
+        trigger:"#third",
+        start: "center bottom"
+      }
+    })
    
-  //   gsap.from("#fourth img",{
-  //     duration: 1,
-  //     y:300,
-  //     scrollTrigger:{
-  //       trigger:"#fourth",
-  //       start: "center bottom"
-  //     }
-  //   })
-  //   gsap.from("#fourth .content",{
-  //     duration: 1,
-  //     y:-600,
-  //     scrollTrigger:{
-  //       trigger:"#fourth",
-  //       start: "center bottom"
-  //     }
-  //   })
+    gsap.from("#fourth img",{
+      duration: 1,
+      y:300,
+      scrollTrigger:{
+        trigger:"#fourth",
+        start: "center bottom"
+      }
+    })
+    gsap.from("#fourth .content",{
+      duration: 1,
+      y:-600,
+      scrollTrigger:{
+        trigger:"#fourth",
+        start: "center bottom"
+      }
+    })
    
-  //   gsap.from("#fifth img",{
-  //     duration: 1,
-  //     y:300,
-  //     scrollTrigger:{
-  //       trigger:"#fifth",
-  //       start: "center bottom"
-  //     }
-  //   })
-  //   gsap.from("#fifth .content",{
-  //     duration: 1,
-  //     y:-600,
-  //     scrollTrigger:{
-  //       trigger:"#fifth",
-  //       start: "center bottom"
-  //     }
-  //   })
-  //  gsap.from(heading.current.children,{
-  //   y:100,
-  //   duration:1,
-  //   stagger:0.1,
-  //   scrollTrigger:{
-  //     trigger:".heading",
-  //     start:"center bottom"
-  //   }
-  //  })
+    gsap.from("#fifth img",{
+      duration: 1,
+      y:300,
+      scrollTrigger:{
+        trigger:"#fifth",
+        start: "center bottom"
+      }
+    })
+    gsap.from("#fifth .content",{
+      duration: 1,
+      y:-600,
+      scrollTrigger:{
+        trigger:"#fifth",
+        start: "center bottom"
+      }
+    })
+   gsap.from(heading.current.children,{
+    y:100,
+    duration:1,
+    stagger:0.1,
+    scrollTrigger:{
+      trigger:".heading",
+      start:"center bottom"
+    }
+   })
 
 
-  // },[])
+  },[])
   return (
     <div className='features text-white min-h-screen flex flex-col gap-5'id='feature'>
      <div className="heading text-center mb-7 " ref={heading}>

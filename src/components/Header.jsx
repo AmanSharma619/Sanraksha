@@ -57,9 +57,9 @@ const Header = () => {
             </li>
             <li className="px-2 py-2 text-xl bg-clr1 text-white cursor-pointer rounded-full font-bold hover:text-clr5 transition duration-300 ease-in-out transform hover:scale-105">
               {user ? (
-                <button onClick={handleLogout}>Logout</button>
+                <button onClick={handleLogout} className='bg-inherit'>Logout</button>
               ) : (
-                <Link to="/login">Login</Link>
+                <Link to="/login" className='bg-inherit'>Login</Link>
               )}
             </li>
           </ul>
