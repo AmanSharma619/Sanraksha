@@ -1,0 +1,9 @@
+.newspage li{
+    font-size: 22px;
+    border: 1px solid #97113e;
+    width: 80%;
+    height: 15vh;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 25px;
+}
