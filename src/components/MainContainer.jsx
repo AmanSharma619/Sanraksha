@@ -34,7 +34,7 @@ const MainContainer = () => {
   }, []);
   return (
     
-    <div className='h-screen text-white' ref={vantaRef}>
+    <div className='h-screen mt-15 text-white' ref={vantaRef}>
       <div className="main-heading h-3/5 flex items-center justify-center flex-col ">
      <div className='subhead text-center'>
      <span>Navigate  </span>

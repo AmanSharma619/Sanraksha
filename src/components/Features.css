@@ -10,9 +10,9 @@ h1{
 .cover {
     background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1));
     display: flex;
-    align-items: center; /* Align text to bottom */
-    justify-content: center; /* Center horizontally */
-    padding-bottom: 10px; /* Add space from bottom */
+    align-items: center; 
+    justify-content: center;
+    padding-bottom: 10px; 
     font-size: 28px;
     font-weight: 500;
     transition: all 1s;
@@ -57,3 +57,50 @@ h2,h1{
 .box h1{
     font-size: 50px;
 }
+
+@keyframes widthExpand {
+    from {
+      width: 0px;
+      opacity: 0;
+    }
+    to {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes heightExpand {
+    from {
+      height: 0px;
+      opacity: 0;
+    }
+    to {
+      height: 100%;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleExpand {
+    from {
+      transform: scaleX(0);
+      opacity: 0;
+      transform-origin: 100% 50%;
+    }
+    to {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  }
+  
+  #first {
+    animation: widthExpand 0.8s ease-out forwards;
+  }
+  
+  #second, #fifth {
+    animation: heightExpand 0.8s ease-out forwards;
+  }
+  
+  #third, #fourth {
+    animation: scaleExpand 0.8s ease-out forwards;
+  }
+  
