@@ -4,7 +4,7 @@ import about1 from "../assets/about1.png";
 
 const About = () => {
   const heading=useRef(null)
-  // useEffect(()=>{
+  useEffect(()=>{
    
     gsap.from("#first img",{
       duration: 1,
