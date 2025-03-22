@@ -1,65 +1,103 @@
-.heading{
-    font-size: 85px;
-    font-weight: 500;
-    letter-spacing: 1px;
+.heading {
+  font-size: 85px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  overflow: hidden;
 }
-.features{
-    /* background: linear-gradient(to  left, rgba(0, 0, 0, 0.8), rgba(160, 15, 20, 0.55)); */
-    background: radial-gradient(  rgba(160, 15, 20, 0.55),rgba(0, 0, 0, 0.8));
-    /* background: url(/public/css-pattern-by-magicpattern.png) ; */
+
+.features {
+  padding: 2rem;
+  background: radial-gradient(  rgba(160, 15, 20, 0.55),rgba(0, 0, 0, 0.8));
 }
+
 .features-list{
-    min-height: 50vh;
-    box-shadow: 0px 5px  rgba(255, 121, 143, 0.45);
-    max-height: 50vh;
-    overflow: hidden;
+  min-height: 50vh;
+  box-shadow: 0px 5px  rgba(255, 121, 143, 0.45);
+  max-height: 50vh;
+  overflow: hidden;
 }
 .features-list img{
-    width: 23%;
-    height: 70%;
-    border-radius: 10px;
-    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.45);
-    position: relative;
+  width: 35%;
+  height: 70%;
+  border-radius: 13px;
+  box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.45);
+  position: relative;
 }
+
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
 .content h1{
-    font-size: 50px;
+  font-size: 35px;
 }
 .content h2{
-    font-size: 29px;
+  font-size: 29px;
 }
-.heading span{
-    position: relative;
+
+.heading span {
+  opacity: 0;
+  transform: translateY(100px);
+  position:relative
 }
-.heading{
-    overflow: hidden;
+
+.heading span.animate-heading {
+  animation: slideUpHeading 1s forwards;
 }
 /* 
-@keyframes fadeInUp {
-    from { transform: translateY(300px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-  
-  @keyframes fadeInDown {
-    from { transform: translateY(-600px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-  
-  @keyframes staggeredFadeIn {
-    from { transform: translateY(100px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-  
-  #first img, #second img, #third img, #fourth img, #fifth img {
-    animation: fadeInUp 1s ease-out;
-  }
-  
-  #first .content, #second .content, #third .content, #fourth .content, #fifth .content {
-    animation: fadeInDown 1s ease-out;
-  }
-  
-  .heading span {
-    display: inline-block;
-    animation: staggeredFadeIn 1s ease-out forwards;
+.features-list {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.features-list.visible {
+  opacity: 1;
+}
+
+.features-list img {
+  max-width: 35%;
+  border-radius: 13px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(300px);
+}
+
+.features-list .content {
+  opacity: 0;
+  transform: translateY(-600px);
+}
+
+.features-list img.animate-image {
+  animation: slideUpImage 1s forwards;
+}
+
+.features-list .content.animate-content {
+  animation: slideDownContent 1s forwards;
+}
+
+.text-clr2 {
+  color: #CE2742;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.features-list h2 {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  font-weight: 400;
+}
+
+@keyframes slideUpImage {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
   }
   
   .heading span:nth-child(1) { animation-delay: 0s; }

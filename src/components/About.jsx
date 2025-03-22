@@ -1,9 +1,10 @@
-import React from 'react'
-import { useEffect,useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import "./About.css"
+import about1 from "../assets/about1.png";
+
 const About = () => {
   const heading=useRef(null)
-  useEffect(()=>{
+  // useEffect(()=>{
    
     gsap.from("#first img",{
       duration: 1,
@@ -102,52 +103,51 @@ const About = () => {
 
   },[])
   return (
-    <div className='features text-white min-h-screen flex flex-col gap-5'id='feature'>
-     <div className="heading text-center mb-7 " ref={heading}>
-     {"Features".split("").map((letter, index) => (
+    <div className='features text-white min-h-screen flex flex-col gap-5' id='feature'>
+      <div className="heading text-center mb-7" ref={heading}>
+        {"Features".split("").map((letter, index) => (
           <span key={index} className="inline-block">
             {letter}
           </span>
         ))}
       </div>
-      <div className="features-list flex items-center justify-around  " id='first'>
-        <img src="https://i.postimg.cc/5yhd4RD3/heatmaps.png" alt="" />
+      <div className="features-list flex items-center justify-around" id='first'>
+        <img src={about1} alt="" />
         <div className="content w-2/4">
-          <h1 className='text-clr2'>Safety Ranking of Your District</h1>
-          <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati vero necessitatibus dolor alias numquam, nesciunt error!</h2>
+          <h1 className='text-clr2 text-2xl'>Safety Ranking of Your District</h1>
+          <h2>Gives you a clear idea by color grading your district, on basis of it's safety score</h2>
         </div>
       </div>
       <div className="features-list flex items-center justify-around" id='second'>
         <div className="content w-2/4">
-          <h1 className='text-clr2'>Nearby Safe Spots</h1>
-          <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati vero necessitatibus dolor alias numquam, nesciunt error!</h2>
+          <h1 className='text-clr2 text-2xl'>Recent Crimes in Your Area</h1>
+          <h2>Provides you with the incidents which recently occured at your present location.</h2>
         </div>
-        <img src="https://i.postimg.cc/HjDGm1kv/Designer-7.jpg" alt="" />
+        <img src="https://i.postimg.cc/284MWJ6m/preview.webp" alt="" />
       </div>
       <div className="features-list flex items-center justify-around" id='third'>
-        <img src="https://i.postimg.cc/284MWJ6m/preview.webp" alt="" />
+        <img src="https://i.postimg.cc/YqnTfDVd/Screenshot-89.png" alt="" />
         <div className="content w-2/4">
-          <h1 className='text-clr2'>Recent Crimes in Your Area</h1>
-          <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati vero necessitatibus dolor alias numquam, nesciunt error!</h2>
+          <h1 className='text-clr2 text-2xl'>Feedback Markers</h1>
+          <h2>People can contribute by providing a safety scenario by specifying locations.</h2>
         </div>
       </div>
       <div className="features-list flex items-center justify-around" id='fourth'>
         <div className="content w-2/4">
-          <h1 className='text-clr2'>Anonymous Feedback Markers</h1>
-          <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati vero necessitatibus dolor alias numquam, nesciunt error!</h2>
+          <h1 className='text-clr2 text-2xl'>"Kavach" Support</h1>
+          <h2>You can freely ask about any general information, tips, or safe score of any districts you are planning to visit.</h2>
         </div>
-        <img src="https://i.postimg.cc/YqnTfDVd/Screenshot-89.png" alt="" />
+        <img src="https://i.postimg.cc/fRwJYGwh/Designer-2.jpg" alt="" />
       </div>
       <div className="features-list flex items-center justify-around" id='fifth'>
-        <img src="https://i.postimg.cc/fRwJYGwh/Designer-2.jpg" alt="" />
+        <img src="https://i.postimg.cc/HjDGm1kv/Designer-7.jpg" alt="" />
         <div className="content w-2/4">
-          <h1 className='text-clr2'>Precautionary Measures</h1>
-          <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati vero necessitatibus dolor alias numquam, nesciunt error!</h2>
+          <h1 className='text-clr2 text-2xl'>Nearby Safe Spots</h1>
+          <h2>Give you details about the police stations and hospitals near you.</h2>
         </div>
       </div>
-
     </div>
   )
 }
 
-export default About
+export default About;
